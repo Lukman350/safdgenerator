@@ -1,0 +1,115 @@
+/* Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: white !important;
+}
+
+a {
+  color: white;
+}
+
+a:hover {
+  color: rgba(255, 255, 255, 0.89) !important;
+}
+
+.navbar-brand .navbar-item {
+  font-weight: bold;
+  font-family: "Poppins", sans-serif;
+  font-size: 30px;
+}
+
+.navbar-item img {
+  padding-right: 10px;
+}
+
+.title {
+  font-size: 40px;
+  color: white !important;
+  z-index: 9999;
+}
+
+.subtitle {
+  font-size: 25px;
+  color: white !important;
+}
+
+.records {
+  background-color: #363636;
+  padding: 20px;
+}
+
+.title-custom {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.title-custom:after {
+  content: " ";
+  display: block;
+  border-bottom: 5px solid white;
+  width: 10%;
+}
+
+.custom-icon {
+  color: rgb(219, 103, 103);
+  font-size: 100px;
+  display: block;
+  margin-bottom: 10px;
+  transition: all 0.5s;
+}
+
+.foot {
+  background-color: #363636;
+  height: 70px;
+  text-align: center;
+  padding: 10px 0;
+  border-top: 1px solid white;
+}
+
+#copy-result {
+  position: absolute;
+  top: 4px;
+  right: 18px;
+}
+
+.navbar,
+.navbar-menu {
+  transition: all 0.5s;
+}
+
+.carousel-img {
+  height: 100vh;
+  background: url("http://safd-generator.herokuapp.com/assets/office.jpg") !important;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 500px;
+  width: 100%;
+}
+
+.slider-navigation-next,
+.slider-navigation-previous {
+  display: none;
+}
+
+.checkbox {
+  color: black;
+}
+
+.modal-card-foot button {
+  width: 100%;
+}
+
+.record-items {
+  transition: all 0.5s;
+}
+
+.record-items:hover {
+  font-size: larger;
+}
+
+.record-items:hover a i {
+  font-size: 120px;
+}

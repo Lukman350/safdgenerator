@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SAFD Forum Generator</title>
+    <!-- Shortcut Icon -->
+    <link rel="shortcut icon" type="image/x-icon" href="https://i.postimg.cc/RFd9JsR5/safdjg-2020-resized-2.png" />
+    <!-- Bulma CSS -->
+    <link rel="stylesheet" href="vendor/bulma/bulma.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.3/dist/css/bulma-carousel.min.css" />
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <section class="hero is-fullheight is-transparent is-medium has-carousel">
+      <div id="carousel-demo" class="hero-carousel">
+        <div class="item-1">
+          <img src="https://i.postimg.cc/qMGQ4x6s/Headquarters-Border.png" class="carousel-img" alt="Headquarters" />
+          <div class="has-text-centered">
+            <h1 class="title">Downtown HQ</h1>
+          </div>
+        </div>
+        <div class="item-2">
+          <img src="https://i.postimg.cc/wTzFCGMx/All-Saints-General-Hospital-Border.png" class="carousel-img" alt="ASGH" />
+          <div class="has-text-centered">
+            <h1 class="title">ASGH</h1>
+          </div>
+        </div>
+        <div class="item-3">
+          <div class="has-text-centered">
+            <img src="https://i.postimg.cc/GmhK2TvZ/County-General-Hospital-Border.png" class="carousel-img" alt="CGH" />
+            <h1 class="title">CGH</h1>
+          </div>
+        </div>
+        <div class="item-4">
+          <div class="has-text-centered">
+            <img src="https://i.postimg.cc/sx5Bsmn5/Montgomery-Hospital-Border.png" class="carousel-img" alt="MH" />
+            <h1 class="title">Montgomery Hospital</h1>
+          </div>
+        </div>
+        <div class="item-5">
+          <div class="has-text-centered">
+            <img src="https://i.postimg.cc/bwCT2YTd/Fire-Station-34-Border.png" class="carousel-img" alt="FS34" />
+            <h1 class="title">Fire Station 34</h1>
+          </div>
+        </div>
+        <div class="item-6">
+          <div class="has-text-centered">
+            <img src="https://i.postimg.cc/8cR4FhKV/Fire-Station-60-Border.png" class="carousel-img" alt="FS60" />
+            <h1 class="title">Fire Station 60</h1>
+          </div>
+        </div>
+      </div>
+      <!-- Hero head: will stick at the top -->
+      <div class="hero-head">
+        <header class="navbar is-fixed-top">
+          <div class="container">
+            <div class="navbar-brand">
+              <a class="navbar-item">
+                <img src="https://i.postimg.cc/RFd9JsR5/safdjg-2020-resized-2.png" alt="SAFD Logo" />
+                SAFD
+              </a>
+              <span class="navbar-burger" data-target="navbarMenuHeroC">
+                <span></span>
+                <span></span>
+                <span></span>
+              </span>
+            </div>
+            <div id="navbarMenuHeroC" class="navbar-menu">
+              <div class="navbar-end">
+                <span class="navbar-item">
+                  <a class="button is-danger" href="#hospital">
+                    <span class="icon">
+                      <i class="fas fa-hospital-user"></i>
+                    </span>
+                    <span>Hospital Records</span>
+                  </a>
+                </span>
+                <span class="navbar-item">
+                  <a class="button is-danger" href="#field">
+                    <span class="icon">
+                      <i class="fab fa-gripfire"></i>
+                    </span>
+                    <span>Field Records</span>
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </header>
+      </div>
+    </section>
+
+    <!-- Time -->
+    <div class="records is-dark">
+      <div class="has-text-centered mt-4 mb-4"><h4>Today is <span id="timer"></span></h4></div>
+    </div>
+
+    <!-- Hospital Section -->
+    <div id="hospital" class="records is-dark">
+      <div class="container">
+        <h1 class="title-custom">Hospital Records</h1>
+        <div class="records-hospital has-text-centered mt-6 mb-6">
+          <div class="columns">
+            <div class="column">
+              <div class="record-items">
+                <a href="javascript:void(0)" id="info-patient">
+                  <i class="fas fa-file-medical custom-icon"></i>
+                  <strong>Patient Information</strong>
+                </a>
+              </div>
+            </div>
+            <div class="column">
+              <div class="record-items">
+                <a href="javascript:void(0)" id="prescription">
+                  <i class="fas fa-prescription custom-icon"></i>
+                  <strong>Prescription</strong>
+                </a>
+              </div>
+            </div>
+            <div class="column">
+              <div class="record-items">
+                <a href="javascript:void(0)" id="surgery">
+                  <i class="fas fa-syringe custom-icon"></i>
+                  <strong>Surgery Report</strong>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Field Section -->
+    <div id="field" class="records is-dark">
+      <div class="container">
+        <h1 class="title-custom">Field Records</h1>
+        <div class="records-field has-text-centered mt-6 mb-6">
+          <div class="columns">
+            <div class="column">
+              <div class="record-items">
+                <a href="javascript:void(0)" id="pcr">
+                  <i class="fas fa-first-aid custom-icon"></i>
+                  <strong>Patient Care Report</strong>
+                </a>
+              </div>
+            </div>
+            <div class="column">
+              <div class="record-items">
+                <a href="javascript:void(0)" id="patrol-notes">
+                  <i class="fas fa-car custom-icon"></i>
+                  <strong>Patrol Notes</strong>
+                </a>
+              </div>
+            </div>
+            <div class="column">
+              <div class="record-items">
+                <a href="javascript:void(0)" id="incident-report">
+                  <i class="fas fa-fire custom-icon"></i>
+                  <strong>Incident Report</strong>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="foot">
+      <p>Copyright &copy; <span id="copyright-years"></span>. All rights reserved. By Lukman</p>
+    </div>
+
+    <!-- Patient Information Modal -->
+    <div class="modal" id="patient-info-modal">
+      <div class="modal-background"></div>
+      <div class="modal-card">
+        <header class="modal-card-head">
+          <p class="modal-card-title">Patient Information</p>
+          <button class="delete" aria-label="close"></button>
+        </header>
+        <section class="modal-card-body">
+          <!-- Content ... -->
+        </section>
+        <footer class="modal-card-foot">
+          <button class="button is-success">Generate</button>
+        </footer>
+      </div>
+    </div>
+
+    <!-- Prescription Modal -->
+    <div class="modal" id="prescription-modal">
+      <div class="modal-background"></div>
+      <div class="modal-card">
+        <header class="modal-card-head">
+          <p class="modal-card-title">Prescription</p>
+          <button class="delete" aria-label="close"></button>
+        </header>
+        <section class="modal-card-body">
+          <div class="field">
+            <label class="label">Your District</label>
+            <div class="control">
+              <div class="select">
+                <select id="district-pc">
+                  <option selected disabled>Choose...</option>
+                  <option value="ASGH">ASGH</option>
+                  <option value="CGH">CGH</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Prescriber</label>
+            <div class="control">
+              <input class="input" type="text" id="prescriber-pc" placeholder="Prescriber" />
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Position Held</label>
+            <div class="control">
+              <input class="input" type="text" id="position-pc" placeholder="Position held" />
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Date</label>
+            <div class="control">
+              <input class="input" type="text" id="date-pc" placeholder="DD/MM/YYYY" />
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Repeat Dispensing</label>
+            <div class="control">
+              <div class="select">
+                <select id="dispensing-pc">
+                  <option selected disabled>Choose...</option>
+                  <option value="cbf">Yes</option>
+                  <option value="cb">No</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Treatment Type</label>
+            <div class="control">
+              <div class="select">
+                <select id="treatment-type">
+                  <option selected disabled>Choose...</option>
+                  <option value="Inpatient">Inpatient (Rawat Inap)</option>
+                  <option value="Outpatient">Outpatient (Rawat Jalan)</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Medicine</label>
+            <div class="control" id="container_med">
+              <div class="columns">
+                <div class="column">
+                  <div class="select">
+                    <select id="medicine[]">
+                      <option selected disabled>Choose...</option>
+                      <option value="Arenipocetees 3.0">Arenipocetees 3.0</option>
+                      <option value="Krarouvitis Plus">Krarouvitis Plus</option>
+                      <option value="Lazulparilla 2.0">Lazulparilla 2.0</option>
+                      <option value="Nanophytum Acid">Nanophytum Acid</option>
+                      <option value="Olatsisymbrium 1.0">Olatsisymbrium 1.0</option>
+                      <option value="Pyosisymbrium Extra">Pyosisymbrium Extra</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="column">
+                  <input type="number" id="medicine_num[]" class="input" min="0" max="10" placeholder="Amount" />
+                </div>
+                <div class="column">
+                  <button class="button is-success" id="add_med">Add</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Signature</label>
+            <div class="control">
+              <input class="input" type="text" id="signature-pc" placeholder="Your signature" />
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Screenshot</label>
+            <div class="control" id="ss_container">
+              <div class="columns">
+                <div class="column">
+                  <input class="input" type="text" id="screenshot_pc[]" placeholder="Screenshot image link ex: https://example.com/images.png" />
+                </div>
+                <div class="column">
+                  <button class="button is-success" id="add_ss">Add</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Result</label>
+            <div class="control">
+              <textarea class="textarea" placeholder="The result will be displayed here" id="result-pc"></textarea>
+              <button class="button is-primary is-small" id="copy-result">Copy</button>
+            </div>
+          </div>
+        </section>
+        <footer class="modal-card-foot">
+          <button class="button is-success" id="generate-pc">Generate</button>
+        </footer>
+      </div>
+    </div>
+
+    <!-- Surgery Modal -->
+    <div class="modal" id="surgery-modal">
+      <div class="modal-background"></div>
+      <div class="modal-card">
+        <header class="modal-card-head">
+          <p class="modal-card-title">Surgery Report</p>
+          <button class="delete" aria-label="close"></button>
+        </header>
+        <section class="modal-card-body">
+          <div class="columns">
+            <div class="column">
+              <div class="field">
+                <label class="label">Your Name</label>
+                <div class="control">
+                  <input class="input" type="text" id="name-sr" placeholder="Your full name" />
+                </div>
+              </div>
+              <div class="field">
+                <label class="label">Your Rank</label>
+                <div class="control">
+                  <input class="input" type="text" id="rank-sr" placeholder="Your rank" />
+                </div>
+              </div>
+              <div class="field">
+                <label class="label">Patient Name</label>
+                <div class="control">
+                  <input class="input" type="text" id="patient-sr" placeholder="Patient name" />
+                </div>
+              </div>
+              <div class="field">
+                <label class="label">Patient Age</label>
+                <div class="control">
+                  <input class="input" type="text" id="age-sr" placeholder="Patient age" />
+                </div>
+              </div>
+              <div class="field">
+                <label class="label">Patient Gender</label>
+                <div class="control">
+                  <div class="select">
+                    <select id="gender-sr">
+                      <option selected disabled>Choose...</option>
+                      <option value="Male">Male</option>
+                      <option value="Female">Female</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="field">
+                <label class="label">Type of Surgery</label>
+                <div class="control">
+                  <input class="input" type="text" id="type-sr" placeholder="Type of surgery" />
+                </div>
+              </div>
+              <div class="field">
+                <label class="label">Injury</label>
+                <div class="control">
+                  <input class="input" type="text" id="injury-sr" placeholder="Injury" />
+                </div>
+              </div>
+            </div>
+            <div class="column">
+              <div class="field">
+                <label class="label">LoC on Arrival</label>
+                <div class="control">
+                  <div class="select">
+                    <select id="loc-sr">
+                      <option selected disabled>Choose...</option>
+                      <option value="Alert">Alert</option>
+                      <option value="Verbal">Verbal</option>
+                      <option value="Pain Stimuli">Pain Stimuli</option>
+                      <option value="Unresponsive">Unresponsive</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="field">
+                <label class="label">Circulation</label>
+                <div class="control">
+                  <input class="input" type="text" id="circulation-sr" placeholder="Circulation" />
+                </div>
+              </div>
+              <div class="field">
+                <label class="label">Airway</label>
+                <div class="control">
+                  <input type="text" class="input" id="airway-sr" placeholder="Normal / Abnormal (If Abnormal, explain the reason)" />
+                </div>
+              </div>
+              <div class="field">
+                <label class="label">Breathing</label>
+                <div class="control">
+                  <input class="input" type="text" id="breathing-sr" placeholder="Breathing" />
+                </div>
+              </div>
+              <div class="field">
+                <label class="label">Medicine</label>
+                <div class="control">
+                  <input class="input" type="text" id="medicine-sr" placeholder="Medicine" />
+                </div>
+              </div>
+              <div class="field">
+                <label class="label">Anesthesia</label>
+                <div class="control">
+                  <div class="columns">
+                    <div class="column">
+                      <div class="select">
+                        <select id="anethesia-type">
+                          <option selected disabled>Choose...</option>
+                          <option value="Local">Local</option>
+                          <option value="General">General</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="column">
+                      <input type="text" class="input" id="anethesia-medicine" placeholder="Anesthesia Medicine" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="field">
+                <label class="label">Summary</label>
+                <div class="control">
+                  <textarea id="summary-sr" class="textarea" placeholder="Summary"></textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Recovery Status</label>
+            <div class="control">
+              <div class="select">
+                <select id="recovery-sr">
+                  <option selected disabled>Choose...</option>
+                  <option value="Improved">Improved</option>
+                  <option value="Worsened">Worsened</option>
+                  <option value="Deceased">Deceased</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Date</label>
+            <div class="control">
+              <input type="text" class="input" id="date-sr" placeholder="DD/MM/YYYY" />
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Signature</label>
+            <div class="control">
+              <input type="text" class="input" id="signature-sr" placeholder="Put [i]Your Signature[/i] or [img]Your image link signature[/img]" />
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Screenshot</label>
+            <div class="control" id="ss_container_sr">
+              <div class="columns">
+                <div class="column">
+                  <input class="input" type="text" id="screenshot_sr[]" placeholder="Screenshot image link ex: https://example.com/images.png" />
+                </div>
+                <div class="column">
+                  <button class="button is-success" id="add_ss_sr">Add</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Result</label>
+            <div class="control">
+              <textarea class="textarea" placeholder="The result will be displayed here" id="result-sr"></textarea>
+              <button class="button is-primary is-small" id="copy-result">Copy</button>
+            </div>
+          </div>
+        </section>
+        <footer class="modal-card-foot">
+          <button class="button is-success" id="generate-sr">Generate</button>
+        </footer>
+      </div>
+    </div>
+
+    <!-- PCR Modal -->
+    <div class="modal" id="pcr-modal">
+      <div class="modal-background"></div>
+      <div class="modal-card">
+        <header class="modal-card-head">
+          <p class="modal-card-title">Patient Care Report</p>
+          <button class="delete" aria-label="close"></button>
+        </header>
+        <section class="modal-card-body">
+          <div class="columns">
+            <div class="column">
+              <div class="field">
+                <label class="label">Full Name</label>
+                <div class="control">
+                  <input class="input" type="text" id="fullname-pcr" placeholder="Your full name" />
+                </div>
+              </div>
+              <div class="field">
+                <label class="label">Position</label>
+                <div class="control">
+                  <input class="input" type="text" id="position-pcr" placeholder="Your position" />
+                </div>
+              </div>
+              <div class="field">
+                <label class="label">Employee #</label>
+                <div class="control">
+                  <input class="input" type="number" id="badge-number-pcr" placeholder="Your badge number" />
+                </div>
+              </div>
+              <div class="field">
+                <label class="label">Location of Incident</label>
+                <div class="control">
+                  <input class="input" type="text" id="location-pcr" placeholder="Location of Incident" />
+                </div>
+              </div>
+              <div class="field">
+                <label class="label">Date of Incident</label>
+                <div class="control">
+                  <input class="input" type="text" id="date-pcr" placeholder="Date of Incident" />
+                </div>
+              </div>
+              <div class="field">
+                <label class="label">Time of Incident</label>
+                <div class="control">
+                  <input class="input" type="text" id="time-pcr" placeholder="Time of Incident" />
+                </div>
+              </div>
+              <div class="field">
+                <label class="label">Unit</label>
+                <div class="control">
+                  <input class="input" type="text" id="unit-pcr" placeholder="Your unit" />
+                </div>
+              </div>
+              <div class="field">
+                <label class="label">Crew Member</label>
+                <div class="control" id="crew-container">
+                  <div id="cr-member">
+                    <input class="input" type="text" id="crew_member[]" placeholder="e.g Cadet Sherman Ali" />
+                    <button type="button" class="button is-primary" id="add-crew">Add</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="column">
+              <div class="field">
+                <label class="label">Victim Name</label>
+                <div class="control">
+                  <input class="input" type="text" id="victim-pcr" placeholder="Victim fullname" />
+                </div>
+              </div>
+              <div class="field">
+                <label class="label">Age</label>
+                <div class="control">
+                  <input class="input" type="text" id="age-pcr" placeholder="Victim age, if you don't know leave it with 'N/A'" />
+                </div>
+              </div>
+              <div class="field">
+                <label class="label">Injures</label>
+                <div class="control">
+                  <input class="input" type="text" id="injures-pcr" placeholder="Victim injures" />
+                </div>
+              </div>
+              <div class="field">
+                <label class="label">Pulse</label>
+                <div class="control">
+                  <input class="input" type="text" id="pulse-pcr" placeholder="Victim pulse" />
+                </div>
+              </div>
+              <div class="field">
+                <label class="label">Airway</label>
+                <div class="control">
+                  <div class="select">
+                    <select id="airway-pcr">
+                      <option selected disabled>Choose...</option>
+                      <option value="Normal">Normal</option>
+                      <option value="Abnormal">Abnormal</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="field">
+                <label class="label">Breathing</label>
+                <div class="control">
+                  <input class="input" type="text" id="breath-pcr" placeholder="Victim breathing" />
+                </div>
+              </div>
+              <div class="field">
+                <label class="label">AVPU</label>
+                <div class="control">
+                  <div class="select">
+                    <select id="avpu">
+                      <option selected disabled>Choose...</option>
+                      <option value="Alert">Alert</option>
+                      <option value="Verbal">Verbal</option>
+                      <option value="Pain Stimuli">Pain Stimuli</option>
+                      <option value="Unresponsive">Unresponsive</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Incident Details</label>
+            <div class="control">
+              <textarea class="textarea" id="incident-pcr" placeholder="Incident details"></textarea>
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Screenshot</label>
+            <div class="control">
+              <input class="input" type="url" id="ss-health" placeholder="Screenshot without [img][/img]" />
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Employee Signature</label>
+            <div class="control">
+              <input class="input" type="text" id="signature-pcr" placeholder="Your signature, put [img]Signature[/img] or [i]Signature[/i]" />
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Result</label>
+            <div class="control">
+              <textarea class="textarea" placeholder="The result will be displayed here" id="result-pcr"></textarea>
+              <button class="button is-primary is-small" id="copy-result">Copy</button>
+            </div>
+          </div>
+        </section>
+        <footer class="modal-card-foot">
+          <button class="button is-success" id="generate-pcr">Generate</button>
+        </footer>
+      </div>
+    </div>
+
+    <!-- PN Modal -->
+    <div class="modal" id="patrol-notes-modal">
+      <div class="modal-background"></div>
+      <div class="modal-card">
+        <header class="modal-card-head">
+          <p class="modal-card-title">Patrol Notes</p>
+          <button class="delete" aria-label="close"></button>
+        </header>
+        <section class="modal-card-body">
+          <div class="columns">
+            <div class="column">
+              <div class="field">
+                <label class="label">Name</label>
+                <div class="control">
+                  <input class="input" type="text" id="name-pn" placeholder="Your name" />
+                </div>
+              </div>
+              <div class="field">
+                <label class="label">Position</label>
+                <div class="control">
+                  <input class="input" type="text" id="position-pn" placeholder="Your position" />
+                </div>
+              </div>
+              <div class="field">
+                <label class="label">Employee #</label>
+                <div class="control">
+                  <input class="input" type="number" id="employee-pn" placeholder="Your badge number" />
+                </div>
+              </div>
+              <div class="field">
+                <label class="label">Unit</label>
+                <div class="control">
+                  <input class="input" type="text" id="unit-pn" placeholder="Your unit" />
+                </div>
+              </div>
+              <div class="field">
+                <label class="label">Crew Member</label>
+                <div class="control">
+                  <input class="input" type="text" id="crew-pn" placeholder="e.g Cadet Raphael Vincenzo" />
+                </div>
+              </div>
+              <div class="field">
+                <label class="label">Date</label>
+                <div class="control">
+                  <input class="input" type="text" id="date-pn" placeholder="Date" />
+                </div>
+              </div>
+            </div>
+            <div class="column">
+              <div class="field">
+                <label class="label">Total Duration</label>
+                <div class="control">
+                  <input class="input" type="text" id="duration-pn" placeholder="Total duration" />
+                </div>
+              </div>
+              <div class="field">
+                <label class="label">Start Patrol</label>
+                <div class="control">
+                  <input class="input" type="text" id="start-pn" placeholder="Start patrol hh:mm" />
+                </div>
+              </div>
+              <div class="field">
+                <label class="label">Start Patrol Image Link</label>
+                <div class="control">
+                  <input class="input" type="url" id="start-img-pn" placeholder="https://example.com/images.png" />
+                </div>
+              </div>
+              <div class="field">
+                <label class="label">RTB</label>
+                <div class="control">
+                  <input class="input" type="text" id="rtb-pn" placeholder="RTB hh:mm" />
+                </div>
+              </div>
+              <div class="field">
+                <label class="label">RTB Image Link</label>
+                <div class="control">
+                  <input class="input" type="url" id="rtb-img-pn" placeholder="https://example.com/images.png" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Details</label>
+            <div class="control">
+              <textarea class="textarea" id="details-pn" placeholder="Details"></textarea>
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Signature</label>
+            <div class="control">
+              <input class="input" type="text" id="signature-pn" placeholder="Your signature image link example: https://example.com/images.png" />
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Result</label>
+            <div class="control">
+              <textarea class="textarea" id="result-pn" placeholder="The result will be displayed here"></textarea>
+              <button class="button is-primary is-small" id="copy-result">Copy</button>
+            </div>
+          </div>
+        </section>
+        <footer class="modal-card-foot">
+          <button class="button is-success" id="generate-pn">Generate</button>
+        </footer>
+      </div>
+    </div>
+
+    <!-- Incident Report Modal -->
+    <div class="modal" id="incident-report-modal">
+      <div class="modal-background"></div>
+      <div class="modal-card">
+        <header class="modal-card-head">
+          <p class="modal-card-title">Incident Report</p>
+          <button class="delete" aria-label="close"></button>
+        </header>
+        <section class="modal-card-body">
+          <div class="columns">
+            <div class="column">
+              <div class="field">
+                <label class="label">Unit(s)</label>
+                <div class="control">
+                  <input class="input" type="text" id="units-ir" placeholder="Units of Incident" />
+                </div>
+              </div>
+              <div class="field">
+                <label class="label">Crew Member(s)</label>
+                <div class="control" id="crew-container-ir">
+                  <div id="cr-member-ir">
+                    <input class="input" type="text" id="crew_member_ir[]" placeholder="e.g Cadet Sherman Ali" />
+                    <button type="button" class="button is-primary" id="add-crew-ir">Add</button>
+                  </div>
+                </div>
+              </div>
+              <div class="field">
+                <label class="label">Location of Incident</label>
+                <div class="control">
+                  <input class="input" type="text" id="loc-ir" placeholder="Location of Incident" />
+                </div>
+              </div>
+              <div class="field">
+                <label class="label">Date of Incident</label>
+                <div class="control">
+                  <input class="input" type="text" id="date-ir" placeholder="Date of Incident" />
+                </div>
+              </div>
+              <div class="field">
+                <label class="label">Time of Incident</label>
+                <div class="control">
+                  <input class="input" type="text" id="time-ir" placeholder="Time of Incident" />
+                </div>
+              </div>
+              <div class="field">
+                <label class="label">Situation</label>
+                <div class="control">
+                  <input class="input" type="text" id="situation-ir" placeholder="Incident Situation" />
+                </div>
+              </div>
+            </div>
+            <div class="column">
+              <div class="field">
+                <label class="label">Summary of Incident</label>
+                <div class="control">
+                  <textarea class="textarea" id="summary-ir" placeholder="Brief description of the incident"></textarea>
+                </div>
+              </div>
+              <div class="field">
+                <label class="label">Equipment Usage</label>
+                <div class="control">
+                  <div class="columns">
+                    <div class="column">
+                      <label class="checkbox">
+                        <input type="checkbox" id="hb" />
+                        Hose bridge
+                      </label>
+                      <label class="checkbox">
+                        <input type="checkbox" id="pl" />
+                        Personal line
+                      </label>
+                      <label class="checkbox">
+                        <input type="checkbox" id="jl" />
+                        Jaws of life
+                      </label>
+                      <label class="checkbox">
+                        <input type="checkbox" id="cs" />
+                        Circular saw
+                      </label>
+                      <label class="checkbox">
+                        <input type="checkbox" id="cos" />
+                        Cut-off saw
+                      </label>
+                      <label class="checkbox">
+                        <input type="checkbox" id="fa" />
+                        Fire axe
+                      </label>
+                      <label class="checkbox">
+                        <input type="checkbox" id="ml" />
+                        Mallet
+                      </label>
+                      <label class="checkbox">
+                        <input type="checkbox" id="pp" />
+                        Pick pole
+                      </label>
+                    </div>
+                    <div class="column">
+                      <label class="checkbox">
+                        <input type="checkbox" id="pab" />
+                        Portable air blower
+                      </label>
+                      <label class="checkbox">
+                        <input type="checkbox" id="hlb" />
+                        Halligan bar
+                      </label>
+                      <label class="checkbox">
+                        <input type="checkbox" id="ia" />
+                        Inflatable airbags
+                      </label>
+                      <label class="checkbox">
+                        <input type="checkbox" id="sr" />
+                        Stabilization rods
+                      </label>
+                      <label class="checkbox">
+                        <input type="checkbox" id="ch" />
+                        Ceiling hook
+                      </label>
+                      <label class="checkbox">
+                        <input type="checkbox" id="el" />
+                        24 ft. Extendable ladder
+                      </label>
+                      <label class="checkbox">
+                        <input type="checkbox" id="jp" />
+                        Jump pad
+                      </label>
+                      <label class="checkbox">
+                        <input type="checkbox" id="hr" />
+                        Hydraulic rams
+                      </label>
+                      <div class="field">
+                        <label class="label">Others</label>
+                        <div class="control">
+                          <input type="text" class="input" placeholder="Equipment name" id="others" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="field">
+                <label class="label">Hoses and Fire Extingushier</label>
+                <div class="control">
+                  <div class="columns">
+                    <div class="column">
+                      <label class="checkbox">
+                        <input type="checkbox" id="ll" />
+                        Live line / Preconnect / Crosslay
+                      </label>
+                      <label class="checkbox">
+                        <input type="checkbox" id="sl" />
+                        Supply line / Relay line
+                      </label>
+                      <label class="checkbox">
+                        <input type="checkbox" id="hp" />
+                        Hose pack
+                      </label>
+                      <label class="checkbox">
+                        <input type="checkbox" id="bl" />
+                        Booster line
+                      </label>
+                      <label class="checkbox">
+                        <input type="checkbox" id="25l" />
+                        2.5" line
+                      </label>
+                    </div>
+                    <div class="column">
+                      <label class="checkbox">
+                        <input type="checkbox" id="dg" />
+                        Deluge gun / Deck gun / Master stream
+                      </label>
+                      <label class="checkbox">
+                        <input type="checkbox" id="dp" />
+                        Dry powder
+                      </label>
+                      <label class="checkbox">
+                        <input type="checkbox" id="co2" />
+                        Carbon dioxide (CO2)
+                      </label>
+                      <label class="checkbox">
+                        <input type="checkbox" id="fm" />
+                        Foam
+                      </label>
+                      <label class="checkbox">
+                        <input type="checkbox" id="wtr" />
+                        Water
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Your name</label>
+            <div class="control">
+              <input class="input" type="text" id="name-ir" placeholder="Your name" />
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Signature</label>
+            <div class="control">
+              <input class="input" type="text" id="signature-ir" placeholder="Your signature put [i]Signature[/i] or [img]Signature[/img]" />
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Conclusion</label>
+            <div class="control">
+              <textarea class="textarea" id="conclusion-ir" placeholder="Incident Conclusion"></textarea>
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Result</label>
+            <div class="control">
+              <textarea class="textarea" id="result-ir" placeholder="The result will be displayed here"></textarea>
+              <button class="button is-primary is-small" id="copy-result">Copy</button>
+            </div>
+          </div>
+        </section>
+        <footer class="modal-card-foot">
+          <button class="button is-success" id="generate-ir">Generate</button>
+        </footer>
+      </div>
+    </div>
+
+    <!-- Bulma -->
+    <script src="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.3/dist/js/bulma-carousel.min.js"></script>
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!-- Custom JS -->
+    <script src="js/script.js"></script>
+  </body>
+</html>
