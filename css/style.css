@@ -114,6 +114,10 @@ a:hover {
   font-size: 120px;
 }
 
+.modal-card {
+  color: white !important;
+}
+
 .modal-card-body {
   background-color: #363636;
 }
