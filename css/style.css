@@ -14,17 +14,20 @@ a:hover {
   color: rgba(255, 255, 255, 0.89) !important;
 }
 
-::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: rgb(73,75,72) !important;
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: rgb(73, 75, 72) !important;
   opacity: 1; /* Firefox */
 }
 
-:-ms-input-placeholder { /* Internet Explorer 10-11 */
-  color: rgb(73,75,72) !important;
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: rgb(73, 75, 72) !important;
 }
 
-::-ms-input-placeholder { /* Microsoft Edge */
-  color: rgb(73,75,72) !important;
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: rgb(73, 75, 72) !important;
 }
 
 .navbar-brand .navbar-item {
@@ -133,7 +136,7 @@ a:hover {
 }
 
 .checkbox:hover {
-  color: rgba(255,255,255,0.8);
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .input,
@@ -141,5 +144,9 @@ a:hover {
 select {
   background-color: black !important;
   color: white !important;
-  border: 1px solid white !important;
+  border: 1px solid #ffffff;
+}
+
+.delete:hover {
+  background-color: red;
 }
