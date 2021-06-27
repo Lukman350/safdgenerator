@@ -15,16 +15,16 @@ a:hover {
 }
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: white !important;
+  color: rgb(73,75,72) !important;
   opacity: 1; /* Firefox */
 }
 
 :-ms-input-placeholder { /* Internet Explorer 10-11 */
-  color: white !important;
+  color: rgb(73,75,72) !important;
 }
 
 ::-ms-input-placeholder { /* Microsoft Edge */
-  color: white !important;
+  color: rgb(73,75,72) !important;
 }
 
 .navbar-brand .navbar-item {
