@@ -81,7 +81,6 @@ a:hover {
 
 .carousel-img {
   height: 100vh;
-  background: url("http://safd-generator.herokuapp.com/assets/office.jpg") !important;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -99,6 +98,7 @@ a:hover {
 }
 
 .record-items {
+  margin-top: 7px;
   transition: all 0.5s;
 }
 
