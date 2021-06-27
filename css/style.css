@@ -112,7 +112,7 @@ a:hover {
 
 .label,
 .modal-card-title {
-  color: white !important;
+  color: white;
 }
 
 .modal-card-body {
