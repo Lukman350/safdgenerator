@@ -114,7 +114,8 @@ a:hover {
   font-size: 120px;
 }
 
-.modal-card {
+.label,
+.modal-card-title {
   color: white !important;
 }
 
