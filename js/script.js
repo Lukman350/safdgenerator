@@ -1,5 +1,5 @@
 $(document).scroll(function () {
-  if ($(document).scrollTop() >= 500) {
+  if ($(document).scrollTop() >= 25) {
     $(".navbar").addClass("has-background-grey-dark");
     $(".navbar").addClass("has-shadow");
     $(".navbar").addClass("is-dark");
