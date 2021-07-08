@@ -150,3 +150,7 @@ select {
 .delete:hover {
   background-color: red;
 }
+
+.navbar-burger {
+  height: auto;
+}
